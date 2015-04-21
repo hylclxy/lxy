@@ -8,6 +8,20 @@
   <name>web_demo Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+  	<!-- spring -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.1.6.RELEASE</version>
+    </dependency>
+    
+    <!-- hibernate -->
+    <dependency>
+	   <groupId>org.hibernate</groupId>
+	   <artifactId>hibernate-core</artifactId>
+	   <version>4.3.9.Final</version>
+	</dependency>
+    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
