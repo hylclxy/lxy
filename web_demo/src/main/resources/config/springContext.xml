@@ -27,6 +27,6 @@
         <property name="suffix" value=".jsp" />
     </bean>
     
-    <!-- test -->
+    <!-- 配置hibernate -->
     
 </beans>
