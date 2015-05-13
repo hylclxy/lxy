@@ -15,7 +15,10 @@ public class BaseDao<T> {
 	private Class<T> entityClass;
 	
 	@Autowired
-	private SessionFactory sessionFactory;
+	protected SessionFactory sessionFactory;
+
+	public BaseDao() {
+	}
 	
 	public BaseDao(Class<T> clazz) {  
         this.entityClass = clazz;  
