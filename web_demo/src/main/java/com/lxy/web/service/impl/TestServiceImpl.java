@@ -26,6 +26,10 @@ public class TestServiceImpl implements TestService {
 		
 		logger.info("id: {}", user.getId());
 		
+		user.setUserCode(user.getUserCode() + "1");
+		
+		generalDao.update(user);
+		
 		return null;
 	}
 

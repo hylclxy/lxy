@@ -37,7 +37,7 @@
     </bean>
     
     <!-- 配置hibernate -->
-    <!-- 数据库连接 -->
+    <!-- 数据源-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
       <property name="driverClassName" value="${db.className}" />
       <property name="url" value="${db.url}" />
@@ -54,7 +54,7 @@
         </property>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+<!--                 <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop> -->
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
             </props>
@@ -82,6 +82,7 @@
             <tx:method name="update*" propagation="REQUIRED" />
             <tx:method name="delete*" propagation="REQUIRED" />
             <tx:method name="remove*" propagation="REQUIRED" />
+            <tx:method name="test*" propagation="REQUIRED" />
             <tx:method name="*" read-only="true" />
         </tx:attributes>
     </tx:advice>
