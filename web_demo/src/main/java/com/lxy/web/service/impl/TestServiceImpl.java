@@ -5,6 +5,8 @@ import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lxy.web.dao.GeneralDao;
 import com.lxy.web.entity.User;
@@ -27,6 +29,22 @@ public class TestServiceImpl implements TestService {
 		logger.info("id: {}", user.getId());
 		
 		user.setUserCode(user.getUserCode() + "1");
+		
+		generalDao.update(user);
+		
+		return user;
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRED)
+	public User tttt() {
+		
+		User user = (User) generalDao.get(User.class, 1l);
+		
+		logger.info(user.toString());
+		
+		logger.info("id: {}", user.getId());
+		
+		user.setUserName(user.getUserName() + "2");
 		
 		generalDao.update(user);
 		

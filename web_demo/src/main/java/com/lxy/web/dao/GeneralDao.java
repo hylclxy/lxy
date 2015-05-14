@@ -13,6 +13,12 @@ import org.springframework.stereotype.Component;
 @SuppressWarnings({"rawtypes"})
 public class GeneralDao extends BaseDao<Object> {
 	
+	@Override
+	public Object get(Serializable id) {
+		//此方法需要设定指定的T, 在公共dao里不适用, 屏蔽
+		throw new RuntimeException("Please use method: GeneralDao.get(Class, id)");
+	}
+
 	/**
 	 * 根据id获取数据
 	 */
